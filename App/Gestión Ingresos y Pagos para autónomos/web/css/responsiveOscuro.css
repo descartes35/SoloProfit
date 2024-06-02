@@ -1,0 +1,163 @@
+body {
+    font-family: 'Chakra Petch', sans-serif;
+    color: rgb(202, 91, 36);
+}
+
+a {
+    text-decoration: none;
+}
+
+nav>a {
+    font-size: small;
+}
+
+h1 {
+    margin: 2%;
+    text-align: center;
+}
+
+hr {
+    background-color: #F2F597;
+    height: 3px;
+}
+
+footer {
+    /* padding-left: 25%; */
+}
+
+/* ⬇️Para los enlaces del nav */
+ul>li>a {
+    color: green;
+    /* Cambia el color a tomate rojo */
+    /* text-decoration: none; */
+    /* Opcional: elimina el subrayado de los enlaces */
+}
+
+
+/* *************************************************************** */
+/* CLASES INICIO*/
+.background {
+    background-color: #000000;
+}
+
+.margin-nav {
+    margin: 10%;
+}
+
+.error {
+    color: red;
+}
+
+.fondoNegro {
+    background-color: black;
+}
+
+.colorBlanco {
+    color: white;
+}
+
+.colorBlanco:hover {
+    color: #FFFDD0;
+}
+
+.enlaceVerde {
+    text-decoration: dashed;
+    color: rgb(202, 91, 36);
+}
+
+.enlaceVerde:hover {
+    color: #FFFDD0;
+}
+
+.h2Resumen {
+    color: #8DCC52;
+}
+
+/* CLASES PARA EL NAVBAR */
+.navbar-nav {
+    margin-left: auto;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #AEB9C7;
+    /* Color al hacer hover */
+}
+
+/*************************h3Resumen  *************************/
+/****************************************************/
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px rgb(125, 0, 150), 0 0 10px #492E87, 0 0 15px #492E87, 0 0 10px #8A2BE2;
+    }
+
+    100% {
+        text-shadow: 0 0 10px #2e8769, 0 0 15px #2e8769, 0 0 20px #cbd810, 0 0 15px #8A2BE2;
+    }
+}
+
+.h3Resumen {
+    color: #492E87;
+    background: linear-gradient(45deg, #6A5ACD, #8A2BE2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 5px #492E87, 0 0 10px #492E87;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+/****************************************************/
+/*************************h3Resumen  *************************/
+
+@keyframes glow-gradient {
+    0% {
+        text-shadow: 0 0 5px rgba(219, 112, 147, 0.5), 0 0 10px rgba(255, 20, 147, 0.5), 0 0 15px rgba(219, 112, 147, 0.5);
+    }
+
+    50% {
+        text-shadow: 0 0 5px rgba(219, 112, 147, 0.5), 0 0 10px rgba(255, 20, 147, 0.5), 0 0 20px rgba(219, 112, 147, 0.5);
+    }
+
+    100% {
+        text-shadow: 0 0 5px rgba(219, 112, 147, 0.5), 0 0 10px rgba(255, 20, 147, 0.5), 0 0 15px rgba(219, 112, 147, 0.5);
+    }
+}
+
+.cabecera-subtle-glow {
+    color: transparent;
+    background: linear-gradient(45deg, #FF1493, #DB7093);
+    /* Degradado rosa */
+    -webkit-background-clip: text;
+    animation: glow-gradient 2s ease-in-out infinite;
+    font-size: 1em;
+    text-align: center;
+    margin: 20px;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+    /* Sombra sutil */
+}
+
+
+
+
+/* CLASES FIN */
+/* *************************************************************** */
+
+
+
+
+
+
+
+
+
+
+
+
+/* VISTA INICIAL INICIO */
+/* body {
+    height: 100vh;
+    margin: 0;
+    background-size: cover;
+    background-position: center;
+    animation: backgroundChange 6s infinite;
+} */
+
+/* VISTA INICIAL FIN */

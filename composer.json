@@ -1,0 +1,15 @@
+{
+    "name": "eljefe/solo-profit",
+    "description": "Sistema de gestión financiera para autónomos.",
+    "type": "project",
+    "require": {
+        "fpdf/fpdf": "^1.86"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Emmanuel",
+            "email": "manutelecox64@gmail.com"
+        }
+    ]
+}
