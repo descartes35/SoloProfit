@@ -1,8 +1,8 @@
 <?php
 require_once __DIR__ . '/../../Core/ConexionBd.inc';
+
 class UsuarioRepositorio
 {
-
     public function getDatosUsuarioByCorreo($correo): array |bool
     {
         $sql = "SELECT *  FROM [dbo].[usuarios] WHERE Email = :correo";
@@ -13,14 +13,14 @@ class UsuarioRepositorio
             $stn->bindValue(":correo", $correo);
             $stn->execute();
 
+            $usuario = [];
             while ($fila = $stn->fetch(PDO::FETCH_ASSOC)) {
-                $usuario = [];
                 $usuario['IDUsuario'] = $fila['IDUsuario'];
                 $usuario['Nombre'] = $fila['Nombre'];
                 $usuario['Apellidos'] = $fila['Apellidos'];
                 $usuario['Email'] = $fila['Email'];
                 $usuario['Contraseña'] = $fila['Contraseña'];
-                $usuario['Direccion'] = $fila['Direccion']; //Todo va junto aquí (Provincia, Cp)
+                $usuario['Direccion'] = $fila['Direccion'];
                 $usuario['NIF'] = $fila['NIF'];
                 $usuario['ModoOscuro'] = $fila['ModoOscuro'];
                 $usuario['PreferenciasContacto'] = $fila['PreferenciasContacto'];
@@ -66,7 +66,6 @@ class UsuarioRepositorio
             $idUsuario = $conexion->lastInsertId();
             return $idUsuario;
         } catch (\Exception $th) {
-            // echo $th->getMessage(); 
             return false;
         } finally {
             if (isset($conexion)) {
@@ -111,4 +110,46 @@ class UsuarioRepositorio
             }
         }
     }
+
+    // Nuevo método para obtener datos del usuario por ID
+    public function getDatosUsuarioById($idUsuario): array | bool
+    {
+        $sql = "SELECT * FROM [dbo].[usuarios] WHERE IDUsuario = :idUsuario";
+
+        try {
+            $conexion = (new ConexionBd())->getConexion();
+            $stn = $conexion->prepare($sql);
+            $stn->bindValue(":idUsuario", $idUsuario);
+            $stn->execute();
+
+            $usuario = [];
+            while ($fila = $stn->fetch(PDO::FETCH_ASSOC)) {
+                $usuario['IDUsuario'] = $fila['IDUsuario'];
+                $usuario['Nombre'] = $fila['Nombre'];
+                $usuario['Apellidos'] = $fila['Apellidos'];
+                $usuario['Email'] = $fila['Email'];
+                $usuario['Contraseña'] = $fila['Contraseña'];
+                $usuario['Direccion'] = $fila['Direccion'];
+                $usuario['NIF'] = $fila['NIF'];
+                $usuario['ModoOscuro'] = $fila['ModoOscuro'];
+                $usuario['PreferenciasContacto'] = $fila['PreferenciasContacto'];
+            }
+
+            if (!empty($usuario)) {
+                return $usuario;
+            } else {
+                return false;
+            }
+        } catch (\Exception $th) {
+            return false;
+        } finally {
+            if (isset($conexion)) {
+                unset($conexion);
+            }
+            if (isset($stn)) {
+                unset($stn);
+            }
+        }
+    }
 }
+?>

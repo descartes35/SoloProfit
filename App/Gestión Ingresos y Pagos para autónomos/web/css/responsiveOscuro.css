@@ -70,7 +70,7 @@ ul>li>a {
 }
 
 .h2Resumen {
-    color: #8DCC52;
+    color: #cc9d52;
 }
 
 /* CLASES PARA EL NAVBAR */
@@ -85,7 +85,7 @@ ul>li>a {
 
 /*************************h3Resumen  *************************/
 /****************************************************/
-@keyframes glow {
+/* @keyframes glow {
     0% {
         text-shadow: 0 0 5px rgb(125, 0, 150), 0 0 10px #492E87, 0 0 15px #492E87, 0 0 10px #8A2BE2;
     }
@@ -93,21 +93,22 @@ ul>li>a {
     100% {
         text-shadow: 0 0 10px #2e8769, 0 0 15px #2e8769, 0 0 20px #cbd810, 0 0 15px #8A2BE2;
     }
-}
+} */
 
 .h3Resumen {
     color: #492E87;
-    background: linear-gradient(45deg, #6A5ACD, #8A2BE2);
+    background: linear-gradient(45deg, #5b9847, #ffffff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 5px #492E87, 0 0 10px #492E87;
+    /* text-shadow: 0 0 5px #492E87, 0 0 10px #492E87; */
     animation: glow 1.5s ease-in-out infinite alternate;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
 }
 
 /****************************************************/
 /*************************h3Resumen  *************************/
 
-@keyframes glow-gradient {
+/* @keyframes glow-gradient {
     0% {
         text-shadow: 0 0 5px rgba(219, 112, 147, 0.5), 0 0 10px rgba(255, 20, 147, 0.5), 0 0 15px rgba(219, 112, 147, 0.5);
     }
@@ -119,7 +120,7 @@ ul>li>a {
     100% {
         text-shadow: 0 0 5px rgba(219, 112, 147, 0.5), 0 0 10px rgba(255, 20, 147, 0.5), 0 0 15px rgba(219, 112, 147, 0.5);
     }
-}
+} */
 
 .cabecera-subtle-glow {
     color: transparent;
@@ -133,31 +134,3 @@ ul>li>a {
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
     /* Sombra sutil */
 }
-
-
-
-
-/* CLASES FIN */
-/* *************************************************************** */
-
-
-
-
-
-
-
-
-
-
-
-
-/* VISTA INICIAL INICIO */
-/* body {
-    height: 100vh;
-    margin: 0;
-    background-size: cover;
-    background-position: center;
-    animation: backgroundChange 6s infinite;
-} */
-
-/* VISTA INICIAL FIN */

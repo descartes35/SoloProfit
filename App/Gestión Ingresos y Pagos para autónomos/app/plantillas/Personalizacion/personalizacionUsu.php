@@ -2,7 +2,6 @@
 <div class="container">
     <h2>Editar Perfil</h2>
     <form method="post">
-        <!-- action="index.php?ctl=actualizarUsu" -->
         <div class="mb-3">
             <label for="nombre" class="form-label">Nombre</label>
             <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $datosUsuario['Nombre']; ?>">
@@ -17,7 +16,8 @@
         </div>
         <div class="mb-3">
             <label for="contraseña" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="contraseña" name="contraseña" value="<?php echo $datosUsuario['Email']; ?>">
+            <input type="password" class="form-control" id="contraseña" name="contraseña" value="">
+            <small class="form-text text-muted">Dejar en blanco si no desea cambiar la contraseña</small>
         </div>
         <div class="mb-3">
             <label for="direccion" class="form-label">Dirección</label>

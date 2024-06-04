@@ -19,80 +19,84 @@
 
 <body class="container background">
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="index.php?ctl=inicio">
-                    <h1>$oloProfit</h1>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <?php if (isset($_SESSION['sesionIniciada'])) : ?>
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.php?ctl=inicio">Inicio🌐</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.php?ctl=resumen">Resumen💶</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Registro y Análisis de Transacciones✨
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="index.php?ctl=registroIngreso">Registro de Ingresos</a></li>
-                                    <li><a class="dropdown-item" href="index.php?ctl=registroGasto">Registro de Gastos</a></li>
-                                    <li><a class="dropdown-item" href="index.php?ctl=analisisFinanciero">Análisis Financiero</a></li>
-                                    <li><a class="dropdown-item" href="index.php?ctl=reportes_financieros">Reportes Financieros</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Planificación y Calendario de Citas📇
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="index.php?ctl=NuevaCita">Nueva cita</a></li>
-                                    <li><a class="dropdown-item" href="index.php?ctl=VerCitas">Ver citas</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Inventario📒
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="index.php?ctl=ProductosInicio">Productos🛍️</a></li>
-                                    <li><a class="dropdown-item" href="index.php?ctl=ServiciosInicio">Servicios🛠️</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Gestión🗄️
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="index.php?ctl=ClientesInicio">Clientes🎯</a></li>
-                                    <li><a class="dropdown-item" href="index.php?ctl=ProveedoresInicio">Proveedores👨‍💼</a></li>
-                                    <li><a class="dropdown-item" href="index.php?ctl=ProyectosInicio">Proyectos📝</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.php?ctl=personalizacion">Personalización🎨</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.php?ctl=cerrarSesion">Cerrar sesión ✈︎</a>
-                            </li>
-                        <?php else : ?>
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.php?ctl=SesionInicio">Iniciar sesión🔒</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.php?ctl=SesionRegsitro">Registrarse📝</a>
-                            </li>
-                        <?php endif; ?>
-                    </ul>
+        <?php if (isset($_SESSION['ModoOscuro']) && $_SESSION['ModoOscuro'] == 1) { ?>
+            <nav class="navbar navbar-expand-lg bg-body-primary fixed-top bg-warning">
+            <?php } else { ?>
+                <nav class="navbar navbar-expand-lg bg-body-primary fixed-top bg-light">
+                <?php } ?>
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="index.php?ctl=inicio">
+                        <h1>$oloProfit</h1>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <?php if (isset($_SESSION['sesionIniciada'])) : ?>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.php?ctl=inicio">Inicio🌐</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.php?ctl=resumen">Resumen💶</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Registro y Análisis de Transacciones✨
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="index.php?ctl=registroIngreso">Registro de Ingresos</a></li>
+                                        <li><a class="dropdown-item" href="index.php?ctl=registroGasto">Registro de Gastos</a></li>
+                                        <li><a class="dropdown-item" href="index.php?ctl=analisisFinanciero">Análisis Financiero</a></li>
+                                        <li><a class="dropdown-item" href="index.php?ctl=reportes_financieros">Reportes Financieros</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Planificación y Calendario de Citas📇
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="index.php?ctl=NuevaCita">Nueva cita</a></li>
+                                        <li><a class="dropdown-item" href="index.php?ctl=VerCitas">Ver citas</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Inventario📒
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="index.php?ctl=ProductosInicio">Productos🛍️</a></li>
+                                        <li><a class="dropdown-item" href="index.php?ctl=ServiciosInicio">Servicios🛠️</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Gestión🗄️
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="index.php?ctl=ClientesInicio">Clientes🎯</a></li>
+                                        <li><a class="dropdown-item" href="index.php?ctl=ProveedoresInicio">Proveedores👨‍💼</a></li>
+                                        <li><a class="dropdown-item" href="index.php?ctl=ProyectosInicio">Proyectos📝</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.php?ctl=personalizacion">Personalización🎨</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.php?ctl=cerrarSesion">Cerrar sesión ✈︎</a>
+                                </li>
+                            <?php else : ?>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.php?ctl=SesionInicio">Iniciar sesión🔒</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.php?ctl=SesionRegsitro">Registrarse📝</a>
+                                </li>
+                            <?php endif; ?>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
+                </nav>
     </header>
     <div id="contenido" class="container">
         <br>
@@ -104,7 +108,7 @@
     </div>
     <br>
     <hr>
-    <footer class="text-center bg-dark py-4">
+    <footer class="text-center bg-dark py-4 fixed-bottom">
         <p class="text-light">2024 $oloProfit &copy;, todos los derechos reservados</p>
         <ul class="list-inline">
             <li class="list-inline-item"><a href="#"><img src="web/imagenes/instagram.png" alt="Instagram"></a></li>

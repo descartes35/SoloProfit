@@ -11,12 +11,23 @@ class PersonalizacionController
             $apellidos = $_POST['apellidos'];
             $email = $_POST['email'];
             $contraseña = $_POST['contraseña'];
-            $hashContraseña = password_hash($contraseña, PASSWORD_DEFAULT);
             $direccion = $_POST['direccion'];
             $dni = $_POST['dni'];
-            $modoOscuro = isset($_POST['modoOscuro']) ? 1 : 0; // Si el checkbox está marcado, modo oscuro es 1, de lo contrario es 0
+            $modoOscuro = isset($_POST['modoOscuro']) ? 1 : 0;
 
             $usuarioRepo = new UsuarioRepositorio();
+
+            // Obtener la contraseña actual del usuario
+            $datosUsuario = $usuarioRepo->getDatosUsuarioById($idUsuario);
+
+            // Si el campo de contraseña no está vacío, hashearla
+            if (!empty($contraseña)) {
+                $hashContraseña = password_hash($contraseña, PASSWORD_DEFAULT);
+            } else {
+                // Si está vacío, mantener la contraseña actual
+                $hashContraseña = $datosUsuario['Contraseña'];
+            }
+
             if ($usuarioRepo->actualizarUsuario($idUsuario, $nombre, $apellidos, $email, $hashContraseña, $direccion, $dni, $modoOscuro)) {
                 // Actualizar la variable de sesión después de la actualización exitosa
                 $_SESSION['ModoOscuro'] = $modoOscuro;
@@ -29,9 +40,5 @@ class PersonalizacionController
             $datosUsuario = (new UsuarioRepositorio())->getDatosUsuarioByCorreo($_SESSION['Email']);
             require_once __DIR__ . '/../../app/plantillas/Personalizacion/personalizacionUsu.php';
         }
-    }
-
-    public function editarVisualizacion()
-    {
     }
 }

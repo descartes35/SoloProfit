@@ -1,6 +1,6 @@
 body {
     font-family: 'Chakra Petch', sans-serif;
-    color: rgb(134, 241, 134);
+    color: rgb(255, 255, 255);
 }
 
 a {
@@ -25,19 +25,13 @@ footer {
     /* padding-left: 25%; */
 }
 
-/* ⬇️Para los enlaces del nav */
-ul>li>a {
-    color: green;
-    /* Cambia el color a tomate rojo */
-    /* text-decoration: none; */
-    /* Opcional: elimina el subrayado de los enlaces */
-}
+
 
 
 /* *************************************************************** */
 /* CLASES INICIO*/
 .background {
-    background-color: #0A1D56;
+    background-color: #7e7e7e;
 }
 
 .margin-nav {
@@ -62,7 +56,7 @@ ul>li>a {
 
 .enlaceVerde {
     text-decoration: dashed;
-    color: green;
+    color: rgb(255, 255, 255);
 }
 
 .enlaceVerde:hover {
@@ -70,7 +64,7 @@ ul>li>a {
 }
 
 .h2Resumen {
-    color: #8DCC52;
+    color: #ffffff;
 }
 
 /* CLASES PARA EL NAVBAR */
@@ -85,7 +79,7 @@ ul>li>a {
 
 /*************************h3Resumen  *************************/
 /****************************************************/
-@keyframes glow {
+/* @keyframes glow {
     0% {
         text-shadow: 0 0 5px rgb(125, 0, 150), 0 0 10px #492E87, 0 0 15px #492E87, 0 0 10px #8A2BE2;
     }
@@ -93,37 +87,38 @@ ul>li>a {
     100% {
         text-shadow: 0 0 10px #2e8769, 0 0 15px #2e8769, 0 0 20px #cbd810, 0 0 15px #8A2BE2;
     }
-}
+} */
 
 .h3Resumen {
     color: #492E87;
-    background: linear-gradient(45deg, #6A5ACD, #8A2BE2);
+    background: linear-gradient(45deg, #3c4607, #ffffff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 5px #492E87, 0 0 10px #492E87;
+    /* text-shadow: 0 0 5px #492E87, 0 0 10px #492E87; */
     animation: glow 1.5s ease-in-out infinite alternate;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
 }
 
 /****************************************************/
 /*************************h3Resumen  *************************/
 
-@keyframes glow-gradient {
+/* @keyframes glow-gradient {
     0% {
-        text-shadow: 0 0 5px rgba(219, 112, 147, 0.5), 0 0 10px rgba(255, 20, 147, 0.5), 0 0 15px rgba(219, 112, 147, 0.5);
+        text-shadow: 0 0 5px rgba(101, 86, 0, 0.5), 0 0 10px rgba(101, 86, 0, 0.5), 0 0 15px rgba(101, 86, 0, 0.5);
     }
 
     50% {
-        text-shadow: 0 0 5px rgba(219, 112, 147, 0.5), 0 0 10px rgba(255, 20, 147, 0.5), 0 0 20px rgba(219, 112, 147, 0.5);
+        text-shadow: 0 0 5px rgba(101, 86, 0, 0.5), 0 0 10px rgba(101, 86, 0, 0.5), 0 0 20px rgba(101, 86, 0, 0.5);
     }
 
     100% {
-        text-shadow: 0 0 5px rgba(219, 112, 147, 0.5), 0 0 10px rgba(255, 20, 147, 0.5), 0 0 15px rgba(219, 112, 147, 0.5);
+        text-shadow: 0 0 5px rgba(255, 0, 85, 0.5), 0 0 10px rgba(255, 0, 136, 0.5), 0 0 15px rgba(255, 0, 85, 0.5);
     }
-}
+} */
 
 .cabecera-subtle-glow {
     color: transparent;
-    background: linear-gradient(45deg, #FF1493, #DB7093);
+    background: linear-gradient(45deg, #700a41, #81912f);
     /* Degradado rosa */
     -webkit-background-clip: text;
     animation: glow-gradient 2s ease-in-out infinite;
@@ -144,12 +139,8 @@ footer {
     padding: 0 10%;
 }
 
-.background {
-    background-color: #0A1D56;
-}
-
 .navbar-nav .nav-item .nav-link {
-    color: green;
+    color: rgb(0, 43, 128);
 }
 
 .navbar-nav .nav-link:hover {

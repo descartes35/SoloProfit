@@ -10,16 +10,16 @@
                 <table class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <th>Nombre</th>
-                            <th>Apellidos</th>
+                            <!-- <th>Nombre</th>
+                            <th>Apellidos</th> -->
                             <th>Total Ingresos</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($ingresosPorUsuario as $ingreso) : ?>
                             <tr>
-                                <td><?php echo $ingreso['Nombre']; ?></td>
-                                <td><?php echo $ingreso['Apellidos']; ?></td>
+                                <!-- <td><?php echo $ingreso['Nombre']; ?></td>
+                                <td><?php echo $ingreso['Apellidos']; ?></td> -->
                                 <td><?php echo $ingreso['TotalIngresos']; ?></td>
                             </tr>
                         <?php endforeach; ?>
@@ -33,16 +33,16 @@
                 <table class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <th>Nombre</th>
-                            <th>Apellidos</th>
+                            <!-- <th>Nombre</th>
+                            <th>Apellidos</th> -->
                             <th>Total Gastos</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($gastosPorUsuario as $gasto) : ?>
                             <tr>
-                                <td><?php echo $gasto['Nombre']; ?></td>
-                                <td><?php echo $gasto['Apellidos']; ?></td>
+                                <!-- <td><?php echo $gasto['Nombre']; ?></td>
+                                <td><?php echo $gasto['Apellidos']; ?></td> -->
                                 <td><?php echo $gasto['TotalGastos']; ?></td>
                             </tr>
                         <?php endforeach; ?>
@@ -59,8 +59,8 @@
                 <table class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <th>Nombre</th>
-                            <th>Apellidos</th>
+                            <!-- <th>Nombre</th>
+                            <th>Apellidos</th> -->
                             <th>Total Ingresos</th>
                             <th>Total Gastos</th>
                             <th>Balance</th>
@@ -69,8 +69,8 @@
                     <tbody>
                         <?php foreach ($balanceFinanciero as $balance) : ?>
                             <tr>
-                                <td><?php echo $balance['Nombre']; ?></td>
-                                <td><?php echo $balance['Apellidos']; ?></td>
+                                <!-- <td><?php echo $balance['Nombre']; ?></td>
+                                <td><?php echo $balance['Apellidos']; ?></td> -->
                                 <td><?php echo $balance['TotalIngresos']; ?></td>
                                 <td><?php echo $balance['TotalGastos']; ?></td>
                                 <td><?php echo $balance['Balance']; ?></td>
