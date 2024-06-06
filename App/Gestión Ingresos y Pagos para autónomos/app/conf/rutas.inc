@@ -56,6 +56,7 @@ $mapeoRutas =
     'NuevaCita' => ['controller' => 'CitasController', 'action' => 'NuevaCita'],
     'VerCitas' => ['controller' => 'CitasController', 'action' => 'VerCitas'],
     'CitasBorrar' => ['controller' => 'CitasController', 'action' => 'CitasBorrar'],
+    'CitasEditar' => ['controller' => 'CitasController', 'action' => 'CitasEditar'],
     // ========================================end====================//
     // ====================================CITAS====================================//
     //****************************************************************************************************//

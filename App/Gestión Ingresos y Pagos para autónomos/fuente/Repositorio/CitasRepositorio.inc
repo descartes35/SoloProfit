@@ -81,4 +81,53 @@ class CitasRepositorio
             }
         }
     }
+    public function obtenerCitaPorId($idCita)
+    {
+        $sql = "SELECT * FROM dbo.Citas WHERE IDCita = :idCita";
+
+        try {
+            $conexion = (new ConexionBd())->getConexion();
+            $stn = $conexion->prepare($sql);
+            $stn->bindValue(":idCita", $idCita);
+            $stn->execute();
+
+            return $stn->fetch(PDO::FETCH_ASSOC);
+        } catch (\Throwable $th) {
+            return null;
+        } finally {
+            if (isset($conexion)) {
+                unset($conexion);
+            }
+            if (isset($stn)) {
+                unset($stn);
+            }
+        }
+    }
+
+    public function editarCita($idCita, $fechaHora, $descripcion): bool
+    {
+        $fechaHoraFormateada = date('Y-m-d H:i:s', strtotime($fechaHora));
+
+        $sql = "UPDATE dbo.Citas SET FechaHora = CONVERT(datetime, :fechaHora, 120), Descripcion = :descripcion WHERE IDCita = :idCita";
+
+        try {
+            $conexion = (new ConexionBd())->getConexion();
+            $stn = $conexion->prepare($sql);
+            $stn->bindValue(":fechaHora", $fechaHoraFormateada);
+            $stn->bindValue(":descripcion", $descripcion);
+            $stn->bindValue(":idCita", $idCita);
+            $stn->execute();
+
+            return true;
+        } catch (\Throwable $th) {
+            return false;
+        } finally {
+            if (isset($conexion)) {
+                unset($conexion);
+            }
+            if (isset($stn)) {
+                unset($stn);
+            }
+        }
+    }
 }
